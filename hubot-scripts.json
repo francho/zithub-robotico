@@ -1,5 +1,5 @@
 [
   "auth",
   "tweeter",
-  "http-post-say"
+  "http-post-say.coffee"
 ]
