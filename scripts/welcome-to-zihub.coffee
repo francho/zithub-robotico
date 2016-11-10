@@ -20,7 +20,7 @@ module.exports = (robot) ->
     msg = """
 Hola {nick}, soy Robotico...un bot, un amigo, un sirviente
 
-Te recominedo que antes de nada revises tu perfil y te pongas un avatar (nos gusta ver la cara a la gente para conocernos cuando coincidamos en algún sarao), luego puedes presentarte en el canal #general para que sepan que has llegado.
+Te recomiendo que antes de nada revises tu perfil y te pongas un avatar (nos gusta ver la cara a la gente para conocernos cuando coincidamos en algún sarao), luego puedes presentarte en el canal #general para que sepan que has llegado.
 
 Por aquí usamos la regla de los dos pies, así que te recomiendo que eches un vistazo a los canales y te unas a los de tu interés. En el momento que veas que no te aportan nada o que tu no puedes aportar nada puedes (debes) abandonar el canal y aquí no ha pasado nada.
 
