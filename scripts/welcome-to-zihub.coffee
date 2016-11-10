@@ -16,7 +16,8 @@
 
 
 module.exports = (robot) ->
-  welcomeMsg = """
+  welcomeMsg = (nick) ->
+    msg = """
 Hola {nick}, soy Robotico...un bot, un amigo, un sirviente
 
 Te recominedo que antes de nada revises tu perfil y te pongas un avatar (nos gusta ver la cara a la gente para conocernos cuando coincidamos en algún sarao), luego puedes presentarte en el canal #general para que sepan que has llegado.
@@ -25,6 +26,7 @@ Por aquí usamos la regla de los dos pies, así que te recomiendo que eches un v
 
 Bienvenid@
 """
+    msg.replace '{nick}', nick
 
   add_nicks = (nicks) ->
     robot.brain.data.nicks ||= []
@@ -51,4 +53,4 @@ Bienvenid@
         robot.logger.debug "Already know #{user.name}"
         return
       add_nicks user.name
-      robot.messageRoom user.name, welcomeMsg.replace "{nick}", user.name
+      robot.messageRoom user.name, welcomeMsg(user.name)
