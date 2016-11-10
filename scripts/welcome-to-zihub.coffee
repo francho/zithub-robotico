@@ -39,16 +39,10 @@ Bienvenid@
   robot.brain.on 'loaded', =>
     robot.brain.data.nicks ||= []
 
-  if robot.adapter.bot?.addListener?
-    robot.adapter.bot.addListener 'nick', (old_nick, new_nick, channels, message) ->
-      add_nicks new_nick
-
-    robot.adapter.bot.addListener 'names', (room, nicks) ->
-      add_nicks Object.keys nicks
-
   robot.enter (res) ->
+    user = res.message.user
+    robot.logger.debug "User enter #{user.name}"
     if Array.isArray robot.brain.data.nicks
-      user = res.message.user
       if user.name in robot.brain.data.nicks
         robot.logger.debug "Already know #{user.name}"
         return
