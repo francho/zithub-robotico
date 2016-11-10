@@ -1,15 +1,12 @@
 # Description:
-#   Welcome new people when they enter Zithub.
+#   Welcome to Zithub.
 #
 # Configuration:
-#   HUBOT_WELCOME_MESSAGE: The message to send to new users.
-#   Defaults to "Hey {nick}, welcome to our channel!"
-#   Use a placeholder of {nick} to add the user's nick to the message.
+#   * A persistent brain store like hubot-redis-brain is highly recommended.
 #
 # Notes:
 #   * Sends welcome as private message
 #   * Based on welcome.coffee by Bob Silverberg <bob.silverberg@gmail.com>
-#   * A persistent brain store like hubot-redis-brain is highly recommended.
 #
 # Author:
 #   Francho
