@@ -18,5 +18,5 @@ module.exports = (robot) ->
   ]
 
   robot.hear /\bco\b/im, (res) ->
-    return if res.message.text.match(/@co/)
+    return if res.message.text.match(/^co \w/)
     res.reply res.random leaveReplies
