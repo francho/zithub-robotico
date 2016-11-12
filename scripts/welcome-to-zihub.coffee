@@ -11,6 +11,7 @@
 # Author:
 #   Francho
 
+hubot = require 'hubot'
 
 module.exports = (robot) ->
   welcomeMsg = (nick) ->
@@ -36,6 +37,10 @@ Bienvenid@
   robot.brain.on 'loaded', =>
     robot.brain.data.nicks ||= []
 
+  saluteWithRandomGif = (res) ->
+    msg = new hubot.TextMessage(res.message.user, robot.name + ' gif me hello')
+    robot.receive msg
+
   robot.enter (res) ->
     user = res.message.user
     robot.logger.debug "User enter #{user.name}"
@@ -45,3 +50,4 @@ Bienvenid@
         return
       add_nicks user.name
       robot.messageRoom user.name, welcomeMsg(user.name)
+      saluteWithRandomGif res
