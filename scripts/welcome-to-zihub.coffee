@@ -37,8 +37,9 @@ Bienvenid@
   robot.brain.on 'loaded', =>
     robot.brain.data.nicks ||= []
 
-  saluteWithRandomGif = (user) ->
+  welcomeGif = (user, room) ->
     msg = new hubot.TextMessage(user, robot.name + ' gif me hello')
+    msg.room = room
     robot.receive msg
 
   robot.enter (res) ->
@@ -50,4 +51,4 @@ Bienvenid@
         return
       add_nicks user.name
       robot.messageRoom user.name, welcomeMsg(user.name)
-      saluteWithRandomGif user
+      welcomeGif(user, res.room)
