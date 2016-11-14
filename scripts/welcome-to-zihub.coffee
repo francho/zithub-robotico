@@ -12,6 +12,7 @@
 #   Francho
 
 hubot = require 'hubot'
+inspect = require('util').inspect
 
 module.exports = (robot) ->
   welcomeMsg = (nick) ->
@@ -41,7 +42,7 @@ Bienvenid@
     msg = new hubot.TextMessage(user, robot.name + ' gif me hello')
     msg.channel = channel
     robot.receive msg
-    robot.logger.info "gif #{msg}"
+    robot.logger.info "gif #{inspect msg}"
 
   robot.enter (res) ->
     user = res.message.user
@@ -54,4 +55,4 @@ Bienvenid@
       robot.messageRoom user.name, welcomeMsg(user.name)
       robot.messageRoom '#presentaciones', "Hola @#{user.name}"
       welcomeGif(user, 'presentaciones')
-      robot.logger.info "res.message #{res.message}"
+      robot.logger.info "res.message #{inspect res.message}"
