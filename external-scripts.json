@@ -9,5 +9,6 @@
   "hubot-rules",
   "hubot-shipit",
   "hubot-heroku-keepalive",
-  "hubot-giphy-gifme"
+  "hubot-giphy-gifme",
+  "hubot-agenda"
 ]
