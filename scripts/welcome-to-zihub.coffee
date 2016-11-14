@@ -37,9 +37,9 @@ Bienvenid@
   robot.brain.on 'loaded', =>
     robot.brain.data.nicks ||= []
 
-  welcomeGif = (user, room) ->
+  welcomeGif = (user, channel) ->
     msg = new hubot.TextMessage(user, robot.name + ' gif me hello')
-    msg.room = room
+    msg.channel = channel
     robot.receive msg
 
   robot.enter (res) ->
@@ -51,4 +51,4 @@ Bienvenid@
         return
       add_nicks user.name
       robot.messageRoom user.name, welcomeMsg(user.name)
-      welcomeGif(user, res.room)
+      welcomeGif(user, res.channel)
