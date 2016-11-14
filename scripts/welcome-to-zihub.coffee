@@ -41,6 +41,7 @@ Bienvenid@
     msg = new hubot.TextMessage(user, robot.name + ' gif me hello')
     msg.channel = channel
     robot.receive msg
+    robot.logger.info "gif #{msg}"
 
   robot.enter (res) ->
     user = res.message.user
@@ -51,5 +52,6 @@ Bienvenid@
         return
       add_nicks user.name
       robot.messageRoom user.name, welcomeMsg(user.name)
-      robot.messageRoom '#presentaciones', "Hola #{user.name}"
-      welcomeGif(user, '#presentaciones')
+      robot.messageRoom '#presentaciones', "Hola @#{user.name}"
+      welcomeGif(user, 'presentaciones')
+      robot.logger.info "res.message #{res.message}"
