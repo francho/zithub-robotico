@@ -62,6 +62,7 @@ Bienvenid@
 
   robot.respond /la bienvenida/i, (msg) ->
 #    msg.reply welcomeMsg('')
+    msg.reply 'hola #presentacion \#general \\#general \\\#general'
     robot.adapter.client.web.postMessage(msg.message.room, welcomeMsg(''), {as_user: true, link_names: true})
 #    robot.adapter.client.chat.postMessage(msg.mes   sage.room, welcomeMsg(''), {as_user: true, link_names: true})
 
