@@ -61,14 +61,14 @@ Bienvenid@
       add_nicks user.name
 
   robot.respond /la bienvenida/i, (msg) ->
-#    msg.reply welcomeMsg('')
+    msg.reply welcomeMsg('')
 #    msg.reply 'hola #presentaciones # \#general \\#general \\\#general '
 #    robot.adapter.client.web.postMessage(msg.message.room, welcomeMsg(''), {as_user: true, link_names: true})
 #    robot.adapter.client.chat.postMessage(msg.mes   sage.room, welcomeMsg(''), {as_user: true, link_names: true})
 
-    robot.adapter.client._apiCall("chat.postMessage", {
-      channel: msg.message.rawMessage.channel,
-      text: welcomeMsg(''),
-      as_user: true
-    })
+#    robot.adapter.client._apiCall("chat.postMessage", {
+#      channel: msg.message.rawMessage.channel,
+#      text: welcomeMsg(''),
+#      as_user: true
+#    })
 
