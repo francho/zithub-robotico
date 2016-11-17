@@ -54,11 +54,12 @@ Bienvenid@
       if user.name in robot.brain.data.nicks
         robot.logger.debug "Already know #{user.name}"
         return
-      add_nicks user.name
-      robot.adapter.client.chat.postMessage user.name, welcomeMsg(user.name)
-#      robot.messageRoom user.name, welcomeMsg(user.name)
+#      robot.adapter.client.chat.postMessage(user.name, welcomeMsg(user.name))
+      robot.messageRoom user.name, welcomeMsg(user.name)
       robot.messageRoom '#presentaciones', "Hola @#{user.name}"
       welcomeGif(user, 'presentaciones')
+      add_nicks user.name
 
   robot.respond /la bienvenida/i, (msg) ->
-    msg.reply welcomeMsg('')
+#    msg.reply welcomeMsg('')
+    robot.adapter.client.chat.postMessage(msg.room, welcomeMsg(''))
