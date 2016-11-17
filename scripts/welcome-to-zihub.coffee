@@ -61,5 +61,5 @@ Bienvenid@
       add_nicks user.name
 
   robot.respond /la bienvenida/i, (msg) ->
-#    msg.reply welcomeMsg('')
+    msg.reply welcomeMsg('')
     robot.adapter.client.chat.postMessage(msg.room, welcomeMsg(''), {as_user: true, link_names: true})
