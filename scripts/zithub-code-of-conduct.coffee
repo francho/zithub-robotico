@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   las reglas/código de conducta/el código/
+#   hubot nuestro código - muestra nuestro código de conducta
 #
 # Author:
 #   Francho
@@ -16,7 +16,7 @@
 https = require 'https'
 
 module.exports = (robot) ->
-  robot.respond /(las reglas|c.digo de conducta|el c.digo)/i, (msg) ->
+  robot.respond /nuestro c.digo/i, (msg) ->
     rulesUrl = 'https://raw.githubusercontent.com/francho/zithub-slackin/master/code-of-conduct.md'
     https.get rulesUrl, (res) ->
       data = ''
