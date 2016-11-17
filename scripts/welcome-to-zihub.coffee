@@ -15,7 +15,6 @@
 #   Francho
 
 hubot = require 'hubot'
-inspect = require('util').inspect
 
 module.exports = (robot) ->
   welcomeMsg = (nick) ->
@@ -59,4 +58,4 @@ Bienvenid@
       welcomeGif(user, 'presentaciones')
 
   robot.respond /la bienvenida/i, (msg) ->
-    msg.reply welcomeMsg(msg.user.name)
+    msg.reply welcomeMsg
