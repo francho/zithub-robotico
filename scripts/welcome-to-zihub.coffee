@@ -8,6 +8,9 @@
 #   * Sends welcome as private message
 #   * Based on welcome.coffee by Bob Silverberg <bob.silverberg@gmail.com>
 #
+# Commands:
+#   hubot la bienvenida
+
 # Author:
 #   Francho
 
@@ -35,13 +38,13 @@ Bienvenid@
         robot.brain.data.nicks.push nick
         robot.logger.debug "Added nick: #{nick}"
 
-  robot.brain.on 'loaded', =>
-    robot.brain.data.nicks ||= []
-
   welcomeGif = (user, room) ->
     msg = new hubot.TextMessage(user, robot.name + ' gif me hello')
     msg.room = room
     robot.receive msg
+
+  robot.brain.on 'loaded', =>
+    robot.brain.data.nicks ||= []
 
   robot.enter (res) ->
     user = res.message.user
@@ -55,5 +58,5 @@ Bienvenid@
       robot.messageRoom '#presentaciones', "Hola @#{user.name}"
       welcomeGif(user, 'presentaciones')
 
-  robot.respond /bienvenida/i, (msg) ->
+  robot.respond /la bienvenida/i, (msg) ->
     msg.reply welcomeMsg(msg.user.name)
