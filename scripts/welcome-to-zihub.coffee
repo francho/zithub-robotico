@@ -58,4 +58,4 @@ Bienvenid@
       welcomeGif(user, 'presentaciones')
 
   robot.respond /la bienvenida/i, (msg) ->
-    msg.reply welcomeMsg
+    msg.reply welcomeMsg('')
