@@ -19,9 +19,9 @@ module.exports = (robot) ->
     msg = """
 Hola {nick}, soy Robotico...un bot, un amigo, un sirviente
 
-Te recominedo que antes de nada revises tu perfil y te pongas un avatar (nos gusta ver la cara a la gente para conocernos cuando coincidamos en algún sarao), luego puedes presentarte en el canal #presentaciones para que sepan que has llegado.
+Te recomiendo que antes de nada revises tu perfil y te pongas un avatar (nos gusta ver la cara a la gente para conocernos cuando coincidamos en algún sarao), luego puedes presentarte en el canal <https://zithub.slack.com/messages/presentaciones/|#presentaciones> para que sepan que has llegado.
 
-Por aquí usamos la regla de los dos pies, así que te recomiendo que eches un vistazo a los canales y te unas a los de tu interés. En el momento que veas que no te aportan nada o que tu no puedes aportar nada puedes (debes) abandonar el canal y aquí no ha pasado nada.
+Por aquí usamos la regla de los dos pies, así que echa un vistazo a los canales y únete a los de tu interés. En el momento que veas que no te aportan nada o que tu no puedes aportar nada puedes (debes) abandonar el canal y aquí no ha pasado nada.
 
 Bienvenid@
 """
@@ -54,3 +54,6 @@ Bienvenid@
       robot.messageRoom user.name, welcomeMsg(user.name)
       robot.messageRoom '#presentaciones', "Hola @#{user.name}"
       welcomeGif(user, 'presentaciones')
+
+  robot.respond /bienvenida/i, (msg) ->
+    msg.reply welcomeMsg(msg.user.name)
