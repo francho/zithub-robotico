@@ -62,5 +62,5 @@ Bienvenid@
 
   robot.respond /la bienvenida/i, (msg) ->
 #    msg.reply welcomeMsg('')
-    msg.reply 'voy'
+    msg.reply 'voyq'
     robot.adapter.client.chat.postMessage(msg.room, welcomeMsg(''))
