@@ -64,7 +64,6 @@ Bienvenid@
     msg.reply welcomeMsg('')
 #    robot.adapter.client.chat.postMessage(msg.mes   sage.room, welcomeMsg(''), {as_user: true, link_names: true})
 
-    msg.robot.adapter.customMessage
-      channel: msg.envelope.room
-      username: msg.robot.name
-      text: welcomeMsg('')
+    msg.reply {
+        text: welcomeMsg('')
+      }
