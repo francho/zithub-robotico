@@ -6,7 +6,7 @@
   "description": "Zithub roBOTiCO",
   "dependencies": {
     "hubot": "^2.19.0",
-    "hubot-agenda": "francho/hubot-agenda",
+    "hubot-agenda": "github:francho/hubot-agenda",
     "hubot-diagnostics": "0.0.1",
     "hubot-giphy-gifme": "^0.2.0",
     "hubot-google-images": "^0.2.6",
@@ -19,7 +19,7 @@
     "hubot-rules": "^0.1.1",
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.0",
-    "hubot-slack": "^3.4.2",
+    "hubot-slack": "^4.2.2",
     "querystring": "^0.2.0",
     "twit": "1.1.8"
   },
