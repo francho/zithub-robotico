@@ -57,7 +57,7 @@ Bienvenid@
       #      robot.adapter.client.chat.postMessage(user.name, welcomeMsg(user.name))
       robot.messageRoom user.name, welcomeMsg(user.name)
       robot.messageRoom '#presentaciones', "Hola @#{user.name}"
-      welcomeGif(user, 'presentaciones')
+      welcomeGif(user, user.name)
       add_nicks user.name
 
   robot.respond /la bienvenida/i, (msg) ->
