@@ -59,7 +59,7 @@ Bienvenid@
       #      robot.adapter.client.chat.postMessage(user.name, welcomeMsg(user.name))
       robot.messageRoom user.name, welcomeMsg(user.name)
       robot.messageRoom '#presentaciones', "Hola @#{user.name}"
-      welcomeGif(user, user.name)
+      welcomeGif(user, res.message.profile.room)
       add_nicks user.name
 
   robot.respond /la bienvenida/i, (msg) ->
