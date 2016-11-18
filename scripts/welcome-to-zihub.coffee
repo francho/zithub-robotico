@@ -15,6 +15,7 @@
 #   Francho
 
 hubot = require 'hubot'
+inspect = require('util').inspect
 
 module.exports = (robot) ->
   welcomeMsg = (nick) ->
@@ -48,6 +49,7 @@ Bienvenid@
     robot.brain.data.nicks ||= []
 
   robot.enter (res) ->
+    robot.logger.debug inspect(res.message)
     user = res.message.user
     robot.logger.debug "User enter #{user.name}"
     if Array.isArray robot.brain.data.nicks
