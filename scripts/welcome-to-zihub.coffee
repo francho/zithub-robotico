@@ -2,7 +2,7 @@
 #   Welcome to Zithub.
 #
 # Configuration:
-#   * A persistent brain store like hubot-redis-brain is highly recommended.
+  #   * A persistent brain store like hubot-redis-brain is highly recommended.
 #
 # Notes:
 #   * Sends welcome as private message
@@ -59,7 +59,7 @@ Bienvenid@
       robot.messageRoom user.name, welcomeMsg(user.name)
       robot.messageRoom '#presentaciones', "Hola @#{user.name}"
       add_nicks user.name
-      welcomeGif(user, user.name)
+#      welcomeGif(user, user.name)
 
   robot.respond /la bienvenida/i, (msg) ->
     msg.reply welcomeMsg('')
