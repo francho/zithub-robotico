@@ -56,8 +56,8 @@ Bienvenid@
       if user.name in robot.brain.data.nicks
         robot.logger.debug "Already know #{user.name}"
         return
-      robot.messageRoom user.name, welcomeMsg(user.name)
-      robot.messageRoom '#presentaciones', "Hola @#{user.name}"
+      robot.messageRoom '#presentaciones', "Hola @#{user.name} ¿por qué no te presentas para que sepamos quién eres?"
+      robot.messageRoom "@#{user.name}", welcomeMsg(user.name)
       add_nicks user.name
 #      welcomeGif(user, user.name)
 
