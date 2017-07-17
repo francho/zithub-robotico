@@ -24,6 +24,6 @@
     "hubot-agenda": "github:francho/hubot-agenda"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "7.10.1"
   }
 }
